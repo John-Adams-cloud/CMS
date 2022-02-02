@@ -7,8 +7,6 @@ import store from './store'
 import { registerApp } from './global'
 import 'element-plus/dist/index.css'
 
-import '@/service/axio_demo'
-
 const app = createApp(App)
 
 app.use(router)
