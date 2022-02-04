@@ -15,9 +15,15 @@ app.use(router)
 app.use(store)
 registerApp(app)
 
-jnRequest.request({
+interface DataType {
+  data: any
+  returnCode: string
+  success: boolean
+}
+jnRequest.request<DataType>({
   url: '/get',
   method: 'GET',
+  showLoading: false,
   interceptors: {
     requestInterceptors: (config) => {
       console.log('单次请求的拦截')

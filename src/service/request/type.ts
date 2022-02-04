@@ -10,4 +10,5 @@ export interface JNRequestInterceptors {
 //自定义接口，继承原有的axios requestconfig，扩展从而可以传入拦截器
 export interface JNRequestConfig extends AxiosRequestConfig {
   interceptors?: JNRequestInterceptors
+  showLoading?: boolean
 }
