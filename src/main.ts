@@ -16,7 +16,17 @@ app.use(store)
 registerApp(app)
 
 jnRequest.request({
-  url: 'https://httpbin.org/get',
-  method: 'GET'
+  url: '/get',
+  method: 'GET',
+  interceptors: {
+    requestInterceptors: (config) => {
+      console.log('单次请求的拦截')
+      return config
+    },
+    responseInterceptors: (res) => {
+      console.log('单次响应成功的拦截')
+      return res
+    }
+  }
 })
 app.mount('#app')
