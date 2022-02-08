@@ -7,7 +7,9 @@ import {
   ElTabPane,
   ElIcon,
   ElForm,
-  ElFormItem
+  ElFormItem,
+  ElCheckbox,
+  ElLink
 } from 'element-plus'
 
 const components = [
@@ -17,7 +19,9 @@ const components = [
   ElTabPane,
   ElIcon,
   ElForm,
-  ElFormItem
+  ElFormItem,
+  ElCheckbox,
+  ElLink
 ]
 
 export function registerElement(app: App): void {
