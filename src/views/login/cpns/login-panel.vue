@@ -8,7 +8,7 @@
       <el-tab-pane>
         <template #label>
           <span>
-            <el-icon><avatar /></el-icon>账号登录
+            <el-icon class="account-icon"><avatar /></el-icon>账号登录
           </span>
         </template>
         <!-- 账号密码登录面板内容 -->
@@ -18,7 +18,7 @@
       <el-tab-pane>
         <template #label>
           <span>
-            <el-icon><comment /></el-icon>手机登录
+            <el-icon class="phone-icon"><comment /></el-icon>手机登录
           </span>
         </template>
         <!-- 手机登录面板内容 -->
@@ -53,8 +53,8 @@ export default defineComponent({
     const isKeepCheckBox = ref(true)
 
     const accountRef = ref<InstanceType<typeof loginAccount>>()
-    const handleLoginClick = () => {
-      accountRef.value?.handleAccountLogin()
+    const handleLoginClick = (isKeepCheckBox: boolean) => {
+      accountRef.value?.handleAccountLogin(isKeepCheckBox)
     }
     return {
       isKeepCheckBox,
@@ -81,5 +81,13 @@ export default defineComponent({
 .login-btn {
   margin-top: 10px;
   width: 100%;
+}
+.account-icon {
+  margin-top: 10px;
+  margin-right: 5px;
+}
+.phone-icon {
+  margin-top: 10px;
+  margin-right: 5px;
 }
 </style>

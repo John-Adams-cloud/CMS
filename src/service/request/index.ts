@@ -43,11 +43,9 @@ class JNRequest {
           })
         }
 
-        console.log('所有实例都有的拦截器，请求成功')
         return config
       },
       (err) => {
-        console.log('所有实例都有的拦截器，请求失败')
         return err
       }
     )
@@ -55,12 +53,10 @@ class JNRequest {
     this.instance.interceptors.response.use(
       (config) => {
         this.loading?.close()
-        console.log('所有实例都有的拦截器，响应成功')
         return config.data
       },
       (err) => {
         this.loading?.close()
-        console.log('所有实例都有的拦截器，响应失败')
         return err
       }
     )

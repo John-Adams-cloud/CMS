@@ -29,11 +29,9 @@ jnRequest.request<DataType>({
   showLoading: false,
   interceptors: {
     requestInterceptors: (config) => {
-      console.log('单次请求的拦截')
       return config
     },
     responseInterceptors: (res) => {
-      console.log('单次响应成功的拦截')
       return res
     }
   }
