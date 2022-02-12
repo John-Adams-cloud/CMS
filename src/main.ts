@@ -26,14 +26,6 @@ interface DataType {
 jnRequest.request<DataType>({
   url: '/get',
   method: 'GET',
-  showLoading: false,
-  interceptors: {
-    requestInterceptors: (config) => {
-      return config
-    },
-    responseInterceptors: (res) => {
-      return res
-    }
-  }
+  showLoading: false
 })
 app.mount('#app')
